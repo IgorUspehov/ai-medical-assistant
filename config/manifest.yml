@@ -1,0 +1,24 @@
+project:
+  name: AI Medical Assistant
+  mode: on-premise
+  privacy: gdpr
+  status: architecture-prototype
+
+llm:
+  provider: local
+  engine: vllm
+  external_api_calls: false
+
+rag:
+  type: hybrid
+  vector_db: qdrant
+  citations_required: true
+
+security:
+  patient_data_external_transfer: false
+  audit_log: true
+  role_based_access: true
+
+deployment:
+  launcher: run/start.sh
+  compose_file: deploy/docker-compose.yml
